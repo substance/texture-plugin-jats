@@ -1,18 +1,41 @@
 {
   "name": "texture-plugin-jats",
-  "version": "0.1.0",
-  "description": "",
+  "version": "0.0.0",
+  "description": "JATS XML validators for Texture",
   "main": "index.js",
   "scripts": {
+    "lint": "standard \"src/**/*.js\"",
+    "prepack": "npm install && node make publish",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
   "license": "MIT",
+  "author": {
+    "name": "Substance",
+    "email": "info@substance.io"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/substance/texture-plugin-jats.git"
+  },
+  "bugs": {
+    "url": "https://github.com/substance/texture-plugin-jats/issues"
+  },
+  "homepage": "https://github.com/substance/texture-plugin-jats#readme",
   "devDependencies": {
+    "standard": "12.0.1",
     "substance": "0.142.0",
-    "substance-bundler": "0.25.5"
+    "substance-bundler": "0.25.5",
+    "texture-xml-utils": "0.2.0",
+    "uglify-es": "^3.3.9"
   },
   "peerDependencies": {
     "substance": "^0.142.0"
-  }
+  },
+  "files": [
+    "src",
+    "dist",
+    "package.json",
+    "*.md",
+    "rng"
+  ]
 }
