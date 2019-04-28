@@ -1,6 +1,5 @@
 import { Texture } from 'texture'
 import { validateXML } from 'texture-xml-utils'
-import JATSArchiving10 from './JATSArchiving-1.0.js'
 import JATSArchiving11 from './JATS-Archiving-1-1-MathML3'
 import JATSArchiving12 from './JATS-Archiving-1-2-MathML3'
 
@@ -13,23 +12,23 @@ Texture.registerPlugin({
   description: 'Provides JATS validators',
   configure (configurator) {
     let articleConfig = configurator.getConfiguration('article')
-    articleConfig.registerSchemaId(JATSArchiving10.publicId)
-    articleConfig.addValidator(JATSArchiving10.publicId, {
-      validate (xmlDom) {
-        return validateXML(JATSArchiving10, xmlDom)
-      }
-    })
-    articleConfig.registerSchemaId(JATSArchiving11.publicId)
-    articleConfig.addValidator(JATSArchiving11.publicId, {
-      validate (xmlDom) {
-        return validateXML(JATSArchiving11, xmlDom)
-      }
-    })
-    articleConfig.registerSchemaId(JATSArchiving12.publicId)
-    articleConfig.addValidator(JATSArchiving12.publicId, {
-      validate (xmlDom) {
-        return validateXML(JATSArchiving12, xmlDom)
-      }
-    })
+    // ATTENTION: Texture does not support JATS 1.0, thus I have removed the validator here
+    _registerValidator(articleConfig, JATSArchiving11)
+    _registerValidator(articleConfig, JATSArchiving12)
   }
 })
+
+function _registerValidator (articleConfig, schema) {
+  articleConfig.registerSchemaId(schema.publicId)
+  let validator = {
+    validate (xmlDom) {
+      return validateXML(schema, xmlDom)
+    }
+  }
+  articleConfig.addValidator(schema.publicId, validator)
+  if (schema.aliases) {
+    schema.aliases.forEach(alias => {
+      articleConfig.addValidator(alias, validator)
+    })
+  }
+}
