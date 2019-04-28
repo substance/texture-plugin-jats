@@ -1,6 +1,6 @@
 {
   "name": "texture-plugin-jats",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "JATS XML validators for Texture",
   "main": "index.js",
   "scripts": {
