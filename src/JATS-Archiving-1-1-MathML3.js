@@ -1,9 +1,13 @@
 import { deserializeXMLSchema } from 'texture-xml-utils'
-import JATSArchivingData from '../tmp/JATS-archiving-1.1.data.js'
+import JATSArchiving11Data from '../tmp/JATS-archiving-1.1.data.js'
 
-let JATSArchiving = deserializeXMLSchema(JATSArchivingData,
-  '-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.1 20151215//EN',
+let JATSArchiving11 = deserializeXMLSchema(JATSArchiving11Data,
+  '-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.1 20151215//EN',
   'JATS-archivearticle1-mathml3.dtd'
 )
 
-export default JATSArchiving
+JATSArchiving11.aliases = [
+  '-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.1 20151215//EN'
+]
+
+export default JATSArchiving11

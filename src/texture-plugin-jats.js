@@ -21,6 +21,7 @@ Texture.registerPlugin({
 function _registerValidator (articleConfig, schema) {
   articleConfig.registerSchemaId(schema.publicId)
   let validator = {
+    schemaId: schema.publicId,
     validate (xmlDom) {
       return validateXML(schema, xmlDom)
     }
