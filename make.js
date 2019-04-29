@@ -48,6 +48,9 @@ b.task('build:plugin', () => {
           'substance': 'substance',
           'texture': 'texture'
         }
+      }, {
+        file: DIST + 'texture-plugin-jats.cjs.js',
+        format: 'cjs'
       }
     ],
     external: [ 'substance', 'texture' ]

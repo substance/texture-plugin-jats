@@ -2,7 +2,7 @@
   "name": "texture-plugin-jats",
   "version": "0.1.0",
   "description": "JATS XML validators for Texture",
-  "main": "index.js",
+  "main": "dist/texture-plugin-jats.cjs.js",
   "scripts": {
     "lint": "standard \"src/**/*.js\"",
     "prepack": "npm install && node make publish",
