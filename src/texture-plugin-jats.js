@@ -1,4 +1,4 @@
-import { Texture } from 'texture'
+import { Texture } from 'substance-texture'
 import { validateXML } from 'texture-xml-utils'
 import JATSArchiving11 from './JATS-Archiving-1-1-MathML3'
 import JATSArchiving12 from './JATS-Archiving-1-2-MathML3'
