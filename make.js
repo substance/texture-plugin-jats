@@ -46,14 +46,14 @@ b.task('build:plugin', () => {
         name: 'TexturePluginJATS',
         globals: {
           'substance': 'substance',
-          'texture': 'texture'
+          'substance-texture': 'texture'
         }
       }, {
         file: DIST + 'texture-plugin-jats.cjs.js',
         format: 'cjs'
       }
     ],
-    external: [ 'substance', 'texture' ]
+    external: [ 'substance', 'substance-texture' ]
   })
   b.minify(DIST + 'texture-plugin-jats.js', {
     debug: false
